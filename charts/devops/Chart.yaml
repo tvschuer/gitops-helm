@@ -1,0 +1,11 @@
+apiVersion: v1
+appVersion: "0.1.0"
+description: DevOps Helm chart for Kubernetes
+name: devops
+version: 0.1.0
+home: https://github.com/slick-dev/frontend-monorepo
+sources:
+- https://github.com/slick-dev/frontend-monorepo
+maintainers:
+  - name: mveloso
+engine: gotpl
