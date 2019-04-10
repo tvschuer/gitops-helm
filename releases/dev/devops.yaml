@@ -1,0 +1,20 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: devops-dev
+  namespace: dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:dev-*
+spec:
+  releaseName: devops-dev
+  chart:
+    git: git@github.com:tvschuer/gitops-helm
+    path: charts/devops
+    ref: master
+  values:
+    image: 748094632676.dkr.ecr.eu-west-1.amazonaws.com/devops-monitor:devops-monitor-504
+    replicaCount: 1
+    hpa:
+      enabled: false
